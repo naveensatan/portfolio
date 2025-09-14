@@ -1,103 +1,190 @@
 import Image from "next/image";
+import SiteHeader from "./components/SiteHeader";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./components/Card";
+import {
+  Cloud,
+  GitBranch,
+  Laptop,
+  Link as LinkIcon,
+  Mail,
+  Network,
+  Server,
+} from "lucide-react";
+import { Badge } from "./components/Badge";
+import { Button } from "./components/Button";
+import SiteFooter from "./components/SiteFooter";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <div className="flex flex-1 flex-col py-4">
+        <div className="flex flex-col gap-8 my-6 mx-20 md:flex-row px-4">
+          <div className="flex flex-1 flex-col gap-10 my-auto">
+            <h2 className="text-7xl font-bold text-center md:text-left">
+              <span className="text-neutral">Hi, I build </span>
+              cool stuff
+              <span className="text-neutral"> with code</span>
+            </h2>
+            <p className="text-neutral text-2xl text-center md:text-left">
+              Full-stack developer crafting digital experiences with modern
+              technologies. I turn ideas into reality through clean, efficient
+              code.
+            </p>
+            <div className="flex gap-4 justify-center md:justify-start">
+              <Link href="#contact">
+                <Button variant="secondary">Get in Touch</Button>
+              </Link>
+              <Link href="/resume.pdf">
+                <Button>View My Resume</Button>
+              </Link>
+            </div>
+          </div>
+          <div className="relative animate-float w-72 h-72 md:w-[400px] md:h-[400px] rounded-[50%] overflow-hidden m-auto drop-shadow-md drop-shadow-accent">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/portfolio_pic.png"
+              alt="Hero section image"
+              fill
+              className="object-cover m-auto"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className="flex flex-col items-center gap-4 relative custom-gradient-bg p-30 md:p-40 px-4">
+          <h2 id="about" className="text-4xl text-neutral font-bold">
+            About Me
+          </h2>
+          <p className="text-neutral max-w-5xl text-center">
+            I&apos;m a passionate full-stack developer with expertise in both
+            front-end and back-end technologies. I love creating dynamic,
+            user-friendly web applications that provide real value to users.
+          </p>
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <Card className="flex-1">
+              <CardHeader className="flex flex-col gap-4">
+                <Laptop className="text-accent" />
+                <CardTitle>Front End Development</CardTitle>
+                <CardDescription>
+                  Experienced in building responsive and interactive user
+                  interfaces using React, Tailwind CSS, and other modern
+                  technologies.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="flex-1">
+              <CardHeader className="flex flex-col gap-4">
+                <Server className="text-accent" />
+                <CardTitle>Back End Development</CardTitle>
+                <CardDescription>
+                  Experienced in building robust and scalable server-side
+                  applications using Node.js, Express, and other modern
+                  technologies.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="flex-1">
+              <CardHeader className="flex flex-col gap-4">
+                <Cloud className="text-accent" />
+                <CardTitle>Cloud Development</CardTitle>
+                <CardDescription>
+                  Experienced in building cloud-native applications using AWS
+                  and CI/CD pipelines.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+        <div
+          id="featured-projects"
+          className="flex flex-col items-center gap-4 px-4"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2 className="text-4xl text-neutral font-bold">Featured Projects</h2>
+          <p className="text-neutral max-w-5xl text-center">
+            Some of my recent work that I&apos;m proud of.
+          </p>
+          <div className="flex flex-col md:flex-row w-full md:w-[80%] gap-4">
+            <Card className="flex-1">
+              <CardHeader className="flex flex-col gap-4">
+                <CardTitle>Portfolio Website (This Project)</CardTitle>
+                <CardDescription>
+                  A fully responsive personal portfolio website built with
+                  Next.js and Tailwind CSS.
+                </CardDescription>
+                <div className="flex flex-wrap gap-3">
+                  <Badge className="bg-gray-950">Next.js</Badge>
+                  <Badge className="bg-sky-400">Tailwind CSS</Badge>
+                </div>
+                <div>
+                  <Button variant="ghost" size="sm">
+                    <GitBranch size={16} />
+                    Code
+                  </Button>
+                </div>
+              </CardHeader>
+            </Card>
+            <Card className="flex-1">
+              <CardHeader className="flex flex-col gap-4">
+                <CardTitle>Medical Clinic Management System</CardTitle>
+                <CardDescription>
+                  A web application for managing patient records, appointments,
+                  and billing, built with Next.js and Spring Boot.
+                </CardDescription>
+                <div className="flex flex-wrap gap-3">
+                  <Badge className="bg-gray-950">Next.js</Badge>
+                  <Badge className="bg-sky-400">Tailwind CSS</Badge>
+                  <Badge className="bg-green-600">Spring Boot</Badge>
+                  <Badge className="bg-blue-900">Postgres</Badge>
+                  <Badge className="bg-amber-600">Gitlab CI</Badge>
+                  <Badge className="bg-blue-400">Docker</Badge>
+                </div>
+                <div>
+                  <Link
+                    href="https://github.com/orgs/ClinicPal-Medical/repositories"
+                    target="_blank"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <GitBranch size={16} />
+                      Code
+                    </Button>
+                  </Link>
+                </div>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+        <div
+          id="contact"
+          className="flex flex-col items-center gap-4 relative custom-gradient-bg2 p-30 md:p-40 px-4"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <h2 className="text-4xl text-neutral font-bold">Contact Me</h2>
+          <p className="text-neutral max-w-5xl text-center">
+            I&apos;d love to hear from you! Feel free to reach out.
+          </p>
+          <div className="flex gap-5">
+            <a href="mailto:naveensatanarachchi@outlook.com">
+              <Button>
+                <Mail />
+                Email
+              </Button>
+            </a>
+            <Link
+              href="https://www.linkedin.com/in/naveensatanarachchi/"
+              target="_blank"
+            >
+              <Button variant="outline">
+                <Network />
+                LinkedIn
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <SiteFooter />
+    </main>
   );
 }
