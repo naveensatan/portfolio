@@ -3,32 +3,42 @@ import React from "react";
 
 function SiteFooter() {
   return (
-    <div className="bg-secondary-background py-5 flex justify-between shadow-lg shadow-stroke px-20 w-full">
-      <h1 className="text-2xl font-bold">{`< /> Naveen.dev`}</h1>
-      <ul className="gap-8 hidden md:flex">
-        <Link href="https://github.com/naveensatan" target="_blank">
-          <li className="text-neutral cursor-pointer hover:text-accent transition-all duration-200">
-            Github
+    <footer className="border-t border-stroke/70 bg-surface/80 px-6 py-8 backdrop-blur-md md:px-14">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <h2 className="text-lg font-bold text-primary md:text-xl">
+          {`< /> Naveen.dev`}
+        </h2>
+        <ul className="flex flex-wrap items-center gap-6 text-sm font-semibold tracking-wide">
+          <li>
+            <Link
+              href="https://github.com/naveensatan"
+              target="_blank"
+              className="text-neutral hover:text-primary"
+            >
+              Github
+            </Link>
           </li>
-        </Link>
-        <Link
-          href="https://www.facebook.com/naveensatanarachchi"
-          target="_blank"
-        >
-          <li className="text-neutral cursor-pointer hover:text-accent transition-all duration-200">
-            Facebook
+          <li>
+            <Link
+              href="https://www.facebook.com/naveensatanarachchi"
+              target="_blank"
+              className="text-neutral hover:text-primary"
+            >
+              Facebook
+            </Link>
           </li>
-        </Link>
-        <Link
-          href="https://www.instagram.com/lankan_down_under/"
-          target="_blank"
-        >
-          <li className="text-neutral cursor-pointer hover:text-accent transition-all duration-200">
-            Instagram
+          <li>
+            <Link
+              href="https://www.instagram.com/lankan_down_under/"
+              target="_blank"
+              className="text-neutral hover:text-primary"
+            >
+              Instagram
+            </Link>
           </li>
-        </Link>
-      </ul>
-    </div>
+        </ul>
+      </div>
+    </footer>
   );
 }
 
