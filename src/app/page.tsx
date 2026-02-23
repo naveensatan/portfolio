@@ -11,6 +11,7 @@ import {
   Cloud,
   GitBranch,
   Laptop,
+  Link2,
   Mail,
   Network,
   Server,
@@ -50,7 +51,7 @@ export default function Home() {
                   Get in Touch
                 </Button>
               </Link>
-              <Link href="/resume.pdf">
+              <Link href="/resume.pdf" target="_blank">
                 <Button size="lg" className="group">
                   View Resume
                   <ArrowUpRight className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -126,6 +127,37 @@ export default function Home() {
           <div className="grid gap-5 md:grid-cols-2">
             <Card>
               <CardHeader className="gap-4">
+                <CardTitle>KVOBA Website and Admin Dashboard</CardTitle>
+                <CardDescription className="text-justify">
+                  A full-stack web platform for a non-profit organisation. The
+                  platform includes a public-facing website, a secure admin
+                  interface for creating, editing, and managing site content, as
+                  well as handling event registrations. It supports public event
+                  discovery, user sign-ups, and backend visibility for
+                  organisers through a centralised dashboard.
+                </CardDescription>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Next.js</Badge>
+                  <Badge variant="secondary">Tailwind CSS</Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-400 text-white"
+                  >
+                    Supabase
+                  </Badge>
+                </div>
+                <div>
+                  <Link href="https://www.kvoba.com.au" target="_blank">
+                    <Button variant="ghost" size="sm">
+                      <Link2 size={16} />
+                      Visit
+                    </Button>
+                  </Link>
+                </div>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader className="gap-4">
                 <CardTitle>Portfolio Website (This Project)</CardTitle>
                 <CardDescription>
                   A personal portfolio built in Next.js with a strong visual
@@ -136,10 +168,15 @@ export default function Home() {
                   <Badge variant="secondary">Tailwind CSS</Badge>
                 </div>
                 <div>
-                  <Button variant="ghost" size="sm">
-                    <GitBranch size={16} />
-                    Code
-                  </Button>
+                  <Link
+                    href="https://github.com/naveensatan/portfolio"
+                    target="_blank"
+                  >
+                    <Button variant="ghost" size="sm">
+                      <GitBranch size={16} />
+                      Code
+                    </Button>
+                  </Link>
                 </div>
               </CardHeader>
             </Card>
